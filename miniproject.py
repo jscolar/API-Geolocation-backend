@@ -8,9 +8,9 @@ from math import radians, cos, sin, asin, sqrt
 
 requests_cache.install_cache('postcodes_api_cache', backend='sqlite', expire_after=36000)
 
-
+#Use line 12 to connect to a persistent database and comment line 14
 #cluster = Cluster(['cassandra'])
-#Use this to test locally, but replace the IP with your local Cassandra db
+#Use line 14 to connect to a local database, with an IP Address and comment line 12.
 cluster = Cluster(['172.18.0.2'])
 session = cluster.connect()
 
@@ -41,7 +41,8 @@ def hello():
 @app.route('/',  methods=['GET','POST'])
 def profile():
 	text = request.form['postcode']
-	postcode = text.upper()
+	post1 = text.upper()
+	postcode = post1.replace(" ", "")
 	pprint(postcode)
 
 
