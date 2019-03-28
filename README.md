@@ -4,9 +4,10 @@ This app provides the closest distance to a hospital from any location (Postcode
 
 Take a look at Miniproject.py for the specific details on the code
 
-FOR IT TO WORK, The postcode must be written WITHOUT spaces.
 
-****IMPORTANT***** To properly run the app, you must connect the right database, either with your local Cassandradb or a persistent database on the cloud. This can be done in lines 12-14 of the Miniproject.py file, as indicated in the code.
+****IMPORTANT***** 
+
+To properly run the app, you must connect the right database, either with your local Cassandradb or a persistent database on the cloud. This can be done in lines 12-14 of the Miniproject.py file, as indicated in the code.
 
 We will be using the APIs found on: https://api.postcodes.io to obtain the coordinates of the postcodes in the UK.
 
