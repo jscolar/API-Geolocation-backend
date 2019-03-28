@@ -11,10 +11,11 @@ FOR IT TO WORK, The postcode must be written WITHOUT spaces.
 We will be using the APIs found on: https://api.postcodes.io to obtain the coordinates of the postcodes in the UK.
 
 ********************************************** **GENERAL SPECIFICATION**  *****************************
+
 The purpose of the app is to find the closest hospital to your location by comparing the coordinates of you Postcode with an internal database 
 We are going to perform a series of operations:
 
-1. Create a database called Cassandra, and link it to the app on lines 12-14.
+1. Create a database called Cassandra, and link it to the app on lines 12-14 of the Miniproject.py file
 
 2. Launch the app.
 
@@ -32,9 +33,9 @@ What the app will do, is the following:
 
 - We get the latitude and longitude of the user's postcode and compare them with all the hospitals in our database.
 
-We find the closest distance by using a haversine algorithm.
+- We find the closest distance by using a haversine algorithm.
 
-Then, we display the closest hospital to the user.
+- Then, we display the closest hospital to the user.
 
 
 
