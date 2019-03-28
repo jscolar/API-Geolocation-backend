@@ -10,23 +10,31 @@ FOR IT TO WORK, The postcode must be written WITHOUT spaces.
 
 We will be using the APIs found on: https://api.postcodes.io to obtain the coordinates of the postcodes in the UK.
 
-************************************************GENERAL SPECITICATION******************************
+********************************************** **GENERAL SPECIFICATION**  *****************************
 The purpose of the app is to find the closest hospital to your location by comparing the coordinates of you Postcode with an internal database 
 We are going to perform a series of operations:
 
-Search our persistent database to find if there is a hospital on the specified postcode.
+1. Create a database called Cassandra, and link it to the app on lines 12-14.
 
-If it is not found, then we look for the latitude and longitude of the postcode on an external API
+2. Launch the app.
 
-But first, we must validate that the postcode actually exists in the UK. We send a GET request to validate.
+3. Insert a postcode without spaces (Bug detected)...
 
-If successful, we perform another GET request to obtain the characteristics of the selected option
+4. Get the result.
 
-We get the latitude and lonngitude of the user's postcode and compare them with all the hospitals
+What the app will do, is the following:
 
-We find the closest distance by using a haversine algorithm
+- Search our persistent database to find if there is a hospital on the specified postcode.
 
-Then, we display the closet hospital to the user.
+- If it is not found, then we validate that the postcode actually exists in the UK. We send a GET request to validat to the external API through a GET request.
+
+- If it exists, then we obtain the latitude and longitude of the postcode by a new GET request to another path of the external API
+
+- We get the latitude and longitude of the user's postcode and compare them with all the hospitals in our database.
+
+We find the closest distance by using a haversine algorithm.
+
+Then, we display the closest hospital to the user.
 
 
 
